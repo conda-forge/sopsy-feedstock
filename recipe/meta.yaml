@@ -1,5 +1,5 @@
 {% set name = "sopsy" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sopsy-{{ version }}.tar.gz
-  sha256: cfb883c731030217bb70e9e13eaf309c15284ca02c97282c0ceab218c1f08c90
+  sha256: 7d5a57ebd1a6ca9746e71854e02a1f88bf4129b7aba029e8d282b0247bc83d47
 
 build:
   noarch: python
