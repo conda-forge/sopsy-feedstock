@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sopsy-feedstock
 
 Home: https://github.com/nikaro/sopsy
 
-Package license: GPL-3.0-or-later
+Package license: MIT
 
 Summary: SOPS Python wrapper library
 
