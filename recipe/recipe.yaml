@@ -1,0 +1,47 @@
+context:
+  version: "1.2.1"
+
+package:
+  name: sopsy
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/s/sopsy/sopsy-${{ version }}.tar.gz
+  sha256: 2159a82f6fee10b7e29b688e4a0bdc1a50e96e8da2357ff46f97554aff0990f1
+
+build:
+  noarch: python
+  script: python -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - pyyaml >=6.0.1
+    - go-sops
+
+tests:
+  - python:
+      pip_check: true
+      imports:
+        - sopsy
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+
+about:
+  summary: SOPS Python wrapper library
+  license: MIT
+  license_file: LICENSE
+  homepage: https://sr.ht/~nka/sopsy
+  repository: https://sr.ht/~nka/sopsy
+  documentation: https://sopsy.nikaro.net/
+
+extra:
+  recipe-maintainers:
+    - FelixMoellerQC
+    - pavelzw
